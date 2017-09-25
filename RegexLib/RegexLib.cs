@@ -21,7 +21,7 @@ namespace RegexLib
             }
         }
 
-        public static bool IsFilenameExtentionMatch(string pathFile, string filenameExtention)
+        public static bool IsFilenameExtentionMatch(this string str, string pathFile, string filenameExtention)
         {
             string pathExtention = System.IO.Path.GetExtension(pathFile);
             var regex = new Regex(@".*/." + filenameExtention + "?$");
