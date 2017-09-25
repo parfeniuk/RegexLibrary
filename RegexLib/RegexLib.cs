@@ -20,5 +20,12 @@ namespace RegexLib
                 return false;
             }
         }
+
+        public static bool IsFilenameExtentionMatch(string pathFile, string filenameExtention)
+        {
+            string pathExtention = System.IO.Path.GetExtension(pathFile);
+            var regex = new Regex(@".*/." + filenameExtention + "?$");
+            return regex.IsMatch(pathExtention);
+        }
     }
 }
